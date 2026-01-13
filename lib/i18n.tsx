@@ -245,38 +245,93 @@ export const translations: Translations = {
   // FAQ
   "faq.title": { en: "Frequently asked questions", es: "Preguntas frecuentes" },
   "faq.subtitle": { en: "Got questions? We've got answers.", es: "¿Tienes preguntas? Tenemos respuestas." },
-  "faq.q1": { en: "How long does a typical project take?", es: "¿Cuánto tiempo toma un proyecto típico?" },
-  "faq.a1": {
-    en: "Project timelines vary based on scope. A starter website takes 2-3 weeks, while custom web applications can take 8-12 weeks. We'll provide a detailed timeline during our initial consultation.",
-    es: "Los tiempos varían según el alcance. Un sitio web inicial toma 2-3 semanas, mientras que aplicaciones web personalizadas pueden tomar 8-12 semanas. Proporcionaremos un cronograma detallado durante nuestra consulta inicial.",
+  "faq.q1": { 
+    en: "What type of services do you offer?", 
+    es: "¿Qué tipo de servicios ofrecen?" 
   },
-  "faq.q2": { en: "What's included in the support period?", es: "¿Qué incluye el período de soporte?" },
+  "faq.a1": {
+    en: "We focus on two main areas: developing landing pages and creating custom websites or systems.\n\nLANDINGS – ONE-TIME PAYMENT\nWe have two types of landings according to client needs:\nONE — Custom landing to present your brand.\nESSENTIAL — Conversion-focused landing for lead generation.\n\nCUSTOM – CUSTOM DEVELOPMENTS\nFor larger or specific projects, we offer custom developments:\nCUSTOM — Custom websites or systems, scalable and adapted to the project scope.",
+    es: "Nos enfocamos en dos áreas principales: el desarrollo de landing pages y la creación de websites o sistemas personalizados.\n\nLANDINGS – PAGO ÚNICO\nContamos con dos tipos de landings según las necesidades del cliente:\nONE — Landing personalizada para presentar tu marca.\nESSENTIAL — Landing enfocada en conversión y generación de contactos.\n\nCUSTOM – DESARROLLOS PERSONALIZADOS\nPara proyectos más amplios o específicos, ofrecemos desarrollos a medida:\nCUSTOM — Websites o sistemas personalizados, escalables y adaptados al alcance del proyecto.",
+  },
+  "faq.q2": { 
+    en: "How long does landing page development take?", 
+    es: "¿Cuánto tiempo tarda el desarrollo de una landing page?" 
+  },
   "faq.a2": {
-    en: "Support includes bug fixes, minor content updates, security patches, and technical assistance. Extended support packages are available for ongoing maintenance and optimization.",
-    es: "El soporte incluye corrección de errores, actualizaciones menores de contenido, parches de seguridad y asistencia técnica. Hay paquetes de soporte extendido disponibles para mantenimiento y optimización continua.",
+    en: "Estimated delivery time can be between 3 and 10 business days, depending on content, design, and specific requirements. If the client already has logo, texts, and images ready, delivery time can be even faster.",
+    es: "El tiempo estimado de entrega puede ser entre 3 y 10 días hábiles, dependiendo del contenido, diseño y requerimientos específicos. Si el cliente ya tiene listo logo, textos e imágenes, el tiempo de entrega puede ser aún más rápido.",
   },
   "faq.q3": {
-    en: "Do you work with clients outside Guatemala?",
-    es: "¿Trabajan con clientes fuera de Guatemala?",
+    en: "What do I need to start my website?",
+    es: "¿Qué necesito para comenzar mi página web?",
   },
   "faq.a3": {
-    en: "We work with clients globally. Our team is experienced in remote collaboration and we use modern tools to ensure seamless communication across time zones.",
-    es: "Trabajamos con clientes a nivel global. Nuestro equipo tiene experiencia en colaboración remota y usamos herramientas modernas para asegurar una comunicación fluida a través de zonas horarias.",
+    en: "Generally we need:\n• Logo and color palette (if you already have them)\n• Basic information about your business or service\n• Images or photographs you want to use\n• Examples of sites you like as reference\n\nWe guide you through each step to simplify the process.",
+    es: "Generalmente necesitamos:\n• Logo y paleta de colores (si ya los tienes)\n• Información básica de tu negocio o servicio\n• Imágenes o fotografías que quieras utilizar\n• Ejemplos de sitios que te gusten como referencia\n\nNosotros te guiamos en cada paso para simplificar el proceso.",
   },
-  "faq.q4": { en: "Can you help with existing websites?", es: "¿Pueden ayudar con sitios web existentes?" },
+  "faq.q4": { 
+    en: "Do you develop custom systems?", 
+    es: "¿Desarrollan sistemas a medida?" 
+  },
   "faq.a4": {
-    en: "Yes, we offer website redesigns, performance optimization, and feature additions to existing sites. We'll audit your current setup and recommend the best path forward.",
-    es: "Sí, ofrecemos rediseño de sitios web, optimización de rendimiento y adición de funcionalidades a sitios existentes. Auditaremos tu configuración actual y recomendaremos el mejor camino a seguir.",
+    en: "Yes. We create custom systems to automate processes, manage information, handle inventories, sales, projects, reports, and more. We adapt to your company's needs and define the necessary functionalities before starting.",
+    es: "Sí. Creamos sistemas personalizados para automatizar procesos, administrar información, manejar inventarios, ventas, proyectos, reportes y más. Nos adaptamos a las necesidades de tu empresa y definimos las funcionalidades necesarias antes de iniciar.",
   },
-  "faq.q5": { en: "What technologies do you use?", es: "¿Qué tecnologías usan?" },
+  "faq.q5": { 
+    en: "What is the development process for a custom system?", 
+    es: "¿Cómo es el proceso de desarrollo de un sistema a medida?" 
+  },
   "faq.a5": {
-    en: "We use modern, proven technologies including Next.js, React, TypeScript, and Tailwind CSS for web development. For e-commerce, we work with Shopify and custom solutions. Our choices are always driven by your project's specific needs.",
-    es: "Usamos tecnologías modernas y probadas incluyendo Next.js, React, TypeScript y Tailwind CSS para desarrollo web. Para e-commerce, trabajamos con Shopify y soluciones personalizadas. Nuestras elecciones siempre se basan en las necesidades específicas de tu proyecto.",
+    en: "We work in stages:\n• Initial meeting to gather requirements\n• Functional proposal and preliminary design\n• System development by modules\n• Testing and adjustments\n• Final delivery and system usage training\n\nThroughout the process we share progress to ensure the result meets exactly what was requested.",
+    es: "Trabajamos por etapas:\n• Reunión inicial para recopilar requerimientos\n• Propuesta funcional y diseño preliminar\n• Desarrollo del sistema por módulos\n• Pruebas y ajustes\n• Entrega final y capacitación del uso del sistema\n\nDurante todo el proceso compartimos avances para asegurar que el resultado cumpla exactamente con lo solicitado.",
   },
-  "faq.q6": { en: "How do payments work?", es: "¿Cómo funcionan los pagos?" },
+  "faq.q6": { 
+    en: "Do you offer hosting and domain?", 
+    es: "¿Ofrecen hosting y dominio?" 
+  },
   "faq.a6": {
-    en: "For one-time projects, we typically require 50% upfront and 50% upon completion. Monthly partnerships are billed at the start of each month. We accept bank transfers and major credit cards.",
-    es: "Para proyectos únicos, típicamente requerimos 50% por adelantado y 50% al completar. Las asociaciones mensuales se facturan al inicio de cada mes. Aceptamos transferencias bancarias y las principales tarjetas de crédito.",
+    en: "Yes, we can advise you to acquire them or manage them for you. We can also work with hosting you already have. If you don't have a domain, we help you choose the name and configure it.",
+    es: "Sí, podemos asesorarte para adquirirlos o gestionarlos por ti. También podemos trabajar con hosting que ya tengas. Si no cuentas con dominio, te ayudamos a elegir el nombre y configurarlo.",
+  },
+  "faq.q7": { 
+    en: "Will my site be adaptable to phones and tablets?", 
+    es: "¿Mi sitio será adaptable a teléfonos y tablets?" 
+  },
+  "faq.a7": {
+    en: "Yes. All our developments are designed to display correctly on computers, tablets, and mobile devices, ensuring a smooth experience for your customers.",
+    es: "Sí. Todos nuestros desarrollos están diseñados para verse correctamente en computadoras, tablets y dispositivos móviles, garantizando una experiencia fluida para tus clientes.",
+  },
+  "faq.q8": { 
+    en: "Can I request changes after delivery?", 
+    es: "¿Puedo solicitar cambios después de la entrega?" 
+  },
+  "faq.a8": {
+    en: "We include a number of revisions during development to ensure you are satisfied. If you later want to add new sections or functions, we can quote them as additional improvements.",
+    es: "Incluimos un número de revisiones durante el desarrollo para asegurar que quedes satisfecho. Si posteriormente deseas agregar nuevas secciones o funciones, podemos cotizarlas como mejoras adicionales.",
+  },
+  "faq.q9": { 
+    en: "How can I see the progress of my project?", 
+    es: "¿Cómo puedo ver el avance de mi proyecto?" 
+  },
+  "faq.a9": {
+    en: "We share visual and functional progress throughout development. For custom systems, we work by modules and show you each part before moving to the next.",
+    es: "Compartimos avances visuales y funcionales a lo largo del desarrollo. Para sistemas a medida, trabajamos por módulos y te mostramos cada parte antes de avanzar a la siguiente.",
+  },
+  "faq.q10": { 
+    en: "Do you offer monthly support or maintenance?", 
+    es: "¿Ofrecen soporte o mantenimiento mensual?" 
+  },
+  "faq.a10": {
+    en: "Yes. We have maintenance plans that include updates, technical support, data backup, and monitoring, according to client needs.",
+    es: "Sí. Contamos con planes de mantenimiento que incluyen actualizaciones, soporte técnico, respaldo de datos y monitoreo, según las necesidades del cliente.",
+  },
+  "faq.q11": { 
+    en: "Can you work with clients from any country?", 
+    es: "¿Pueden trabajar con clientes de cualquier país?" 
+  },
+  "faq.a11": {
+    en: "Yes. We work remotely with clients from different regions and adapt payment methods and communication according to their location.",
+    es: "Sí. Trabajamos de manera remota con clientes de diferentes regiones y adaptamos los métodos de pago y comunicación según su ubicación.",
   },
 
   // Contact
