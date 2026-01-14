@@ -13,36 +13,25 @@ export function Work() {
 
   const caseStudies = [
     {
-      title: t("work.ecommerce"),
+      title: t("work.inventory"),
       industry: t("work.retail"),
-      metric: "+47% revenue",
-      image: "/placeholder.svg?height=400&width=600",
+      metric: "+ Control",
+      image: "/work/system.png",
       featured: true,
     },
     {
-      title: t("work.saas"),
-      industry: t("work.technology"),
+      title: t("work.quote"),
+      industry: t("work.retail"),
       metric: "+32% leads",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/work/system2.png",
     },
     {
-      title: t("work.restaurant"),
-      industry: t("work.hospitality"),
-      metric: "2x bookings",
-      image: "/placeholder.svg?height=300&width=400",
+      title: t("work.dental"),
+      industry: t("work.retail"),
+      metric: "2x Optimization",
+      image: "/work/system3.png",
     },
-    {
-      title: t("work.realestate"),
-      industry: t("work.realestateIndustry"),
-      metric: "+85% inquiries",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      title: t("work.fitness"),
-      industry: t("work.healthWellness"),
-      metric: "50k users",
-      image: "/placeholder.svg?height=300&width=400",
-    },
+  
   ]
 
   useEffect(() => {
@@ -94,8 +83,8 @@ export function Work() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Featured Case Study */}
-          <Card className="reveal md:col-span-2 lg:row-span-2 group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-ring/50 transition-all duration-300">
-            <div className="relative h-64 md:h-full min-h-[400px]">
+          <Card className="reveal md:col-span-2 lg:row-span-2 group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-ring/50 transition-all duration-300 !p-0 !gap-0">
+            <div className="relative h-64 md:h-full min-h-[400px] overflow-hidden w-full">
               <Image
                 src={caseStudies[0].image || "/placeholder.svg"}
                 alt={caseStudies[0].title}
@@ -120,10 +109,10 @@ export function Work() {
           {caseStudies.slice(1).map((study, index) => (
             <Card
               key={index}
-              className="reveal group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-ring/50 transition-all duration-300"
+              className="reveal group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-ring/50 transition-all duration-300 !p-0 !gap-0"
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="relative h-48">
+              <div className="relative h-48 overflow-hidden w-full">
                 <Image
                   src={study.image || "/placeholder.svg"}
                   alt={study.title}

@@ -5,10 +5,9 @@ import { Instagram, Twitter, Linkedin, Facebook } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
 
 const socialLinks = [
-  { href: "#", icon: Instagram, label: "Instagram" },
-  { href: "#", icon: Twitter, label: "Twitter" },
-  { href: "#", icon: Linkedin, label: "LinkedIn" },
-  { href: "#", icon: Facebook, label: "Facebook" },
+  { href: "https://www.instagram.com/duopps.gt/", icon: Instagram, label: "Instagram" },
+  { href: "https://www.linkedin.com/company/duopps", icon: Linkedin, label: "LinkedIn" },
+  { href: "https://www.facebook.com/duopps.gt", icon: Facebook, label: "Facebook" },
 ]
 
 export function Footer() {

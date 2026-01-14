@@ -8,7 +8,7 @@ const testimonials = [
 	{
 		name: "Dr. Ale Moscosofrol",
 		role: { en: "Dental Clinic Owner", es: "Propietaria de Clínica Dental" },
-		company: "Clínica Dental Modent",
+		company: "",
 		title: {
 			en: "Excellent service and attention.",
 			es: "Excelente servicio y atención.",
@@ -20,9 +20,9 @@ const testimonials = [
 		rating: 5,
 	},
 	{
-		name: "Alberto",
+		name: "Alberto Paiz",
 		role: { en: "Business Owner", es: "Propietario de Negocio" },
-		company: "Servibandas",
+		company: "",
 		title: {
 			en: "Excellent experience and constant improvements.",
 			es: "Excelente experiencia y mejoras constantes.",
@@ -34,19 +34,34 @@ const testimonials = [
 		rating: 5,
 	},
 	{
-		name: "Saul",
+		name: "Saul Garcia",
 		role: { en: "Operations Manager", es: "Gerente de Operaciones" },
-		company: "TSG",
+		company: "",
 		title: {
 			en: "Functional and easy-to-use platform.",
 			es: "Plataforma funcional y fácil de usar.",
 		},
 		content: {
-			en: "We used to manage everything on paper sheets, but after switching to Duopps' quotations system, we achieved a fast deployment and now our records are much more organized.",
-			es: "Antes llevábamos el control en hojas, pero al migrar al sistema de cotizaciones de Duopps logramos un despliegue rápido y ahora tenemos mucho más orden en nuestros registros.",
+			en: "We used to manage everything on paper sheets, but after switching to Duopps' inventory system, we achieved a fast deployment and now our records are much more organized.",
+			es: "Antes llevábamos el control en hojas, pero al migrar al sistema de inventario de Duopps logramos un despliegue rápido y ahora tenemos mucho más orden en nuestros registros.",
 		},
 		rating: 5,
 	},
+	// {
+	// 	name: "Alex Ayala",
+	// 	role: { en: "Business Owner", es: "Propietario de Negocio" },
+	// 	company: "",
+	// 	title: {
+	// 		en: "Fast and hassle-free service.",
+	// 		es: "Servicio rápido y sin complicaciones.",
+	// 	},
+	// 	content: {
+	// 		en: "Duopps delivered a clean and attractive website with personalized attention and a fast, hassle-free process.",
+	// 		es: "Duopps entregó una página web limpia y atractiva, con atención personalizada y un proceso rápido y sin complicaciones.",
+	// 	},
+	// 	rating: 5,
+	// },
+
 ]
 
 export function Testimonials() {

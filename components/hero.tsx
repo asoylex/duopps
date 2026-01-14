@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Zap, Target, HeartHandshake } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
+import Img from "next/image"
 
 export function Hero() {
   const { t } = useI18n()
@@ -101,11 +102,22 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Cloud Icon */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full animate-bounce" />
-        </div>
+        <Img
+          src="/DuoppsB02.svg"
+          alt="Cloud Icon"
+          width={100}
+          height={100}
+          className="block dark:hidden"
+        />
+        <Img
+          src="/DuoppsW02.svg"
+          alt="Cloud Icon"
+          width={100}
+          height={100}
+          className="hidden dark:block"
+        />
       </div>
     </section>
   )

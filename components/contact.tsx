@@ -12,12 +12,15 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
+import { Turnstile } from "@/components/turnstile"
 
 export function Contact() {
   const [selectedServices, setSelectedServices] = useState<string[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [alert, setAlert] = useState<{ type: "success" | "error"; message: string } | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const { t } = useI18n()
+  const [captchaToken, setCaptchaToken] = useState<string>("")
 
   const services = [
     { id: "website", label: t("contact.service.website") },
@@ -34,13 +37,43 @@ export function Contact() {
     )
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setAlert(null)
+    if (!captchaToken) {
+      setAlert({ type: "error", message: t("contact.captchaRequired") || "Please complete the captcha." })
+      return
+    }
     setIsSubmitting(true)
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      budget: formData.get("budget"),
+      services: selectedServices,
+      message: formData.get("message"),
+      turnstileToken: captchaToken,
+    }
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+      if (res.ok) {
+        setAlert({ type: "success", message: t("contact.thankYou") })
+        form.reset()
+        setSelectedServices([])
+        setCaptchaToken("")
+      } else {
+        setAlert({ type: "error", message: t("contact.error") })
+      }
+    } catch {
+      setAlert({ type: "error", message: t("contact.error") })
+    }
     setIsSubmitting(false)
-    alert(t("contact.thankYou"))
   }
 
   useEffect(() => {
@@ -73,26 +106,36 @@ export function Contact() {
           {/* Contact Form */}
           <Card className="reveal lg:col-span-2 border-border/50 bg-card/50 backdrop-blur-sm">
             <CardContent className="p-6 md:p-8">
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t("contact.name")} *</Label>
-                    <Input id="name" placeholder={t("contact.namePlaceholder")} required className="rounded-xl" />
+                    <Input id="name" name="name" placeholder={t("contact.namePlaceholder")} required className="rounded-xl" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">{t("contact.email")} *</Label>
-                    <Input id="email" type="email" placeholder="you@company.com" required className="rounded-xl" />
+                    <Input id="email" name="email" type="email" placeholder="you@company.com" required className="rounded-xl" />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="company">{t("contact.company")}</Label>
-                    <Input id="company" placeholder={t("contact.companyPlaceholder")} className="rounded-xl" />
+                    <Input id="company" name="company" placeholder={t("contact.companyPlaceholder")} className="rounded-xl" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="budget">{t("contact.budget")}</Label>
-                    <Select>
+                    <Select name="budget" onValueChange={value => {
+                      const input = document.createElement('input')
+                      input.type = 'hidden'
+                      input.name = 'budget'
+                      input.value = value
+                      const form = document.querySelector('form')
+                      const old = form?.querySelector('input[name=budget]')
+                      if (old) old.remove()
+                      form?.appendChild(input)
+                    }}>
                       <SelectTrigger className="rounded-xl">
                         <SelectValue placeholder={t("contact.selectBudget")} />
                       </SelectTrigger>
@@ -101,7 +144,6 @@ export function Contact() {
                         <SelectItem value="5k-10k">{t("contact.budget2")}</SelectItem>
                         <SelectItem value="10k-25k">{t("contact.budget3")}</SelectItem>
                         <SelectItem value="25k+">{t("contact.budget4")}</SelectItem>
-                        <SelectItem value="monthly">{t("contact.budgetMonthly")}</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -129,14 +171,26 @@ export function Contact() {
                   <Label htmlFor="message">{t("contact.message")} *</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder={t("contact.messagePlaceholder")}
                     rows={4}
                     required
                     className="rounded-xl resize-none"
                   />
                 </div>
-
-                {/* reCAPTCHA placeholder */}
+                {alert && (
+                  <div
+                    className={`rounded-lg p-4 mb-2 text-sm font-medium border ${alert.type === "success"
+                        ? "bg-green-50 text-green-800 border-green-200"
+                        : "bg-red-50 text-red-800 border-red-200"
+                      }`}
+                    role="alert"
+                  >
+                    {alert.message}
+                  </div>
+                )}
+                {/* Cloudflare Turnstile Captcha */}
+                <Turnstile siteKey="0x4AAAAAACMB_hwQ_Ue6W1vs" onVerify={setCaptchaToken} />
                 <div className="text-xs text-muted-foreground">{t("contact.recaptcha")}</div>
 
                 <Button type="submit" size="lg" className="w-full sm:w-auto rounded-full px-8" disabled={isSubmitting}>
@@ -173,7 +227,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <p className="text-sm text-muted-foreground">+502 0000 0000</p>
+                    <p className="text-sm text-muted-foreground">+502 5699 0867 / +502 5128 0108</p>
                   </div>
                 </div>
 
@@ -183,7 +237,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@duopps.com</p>
+                    <p className="text-sm text-muted-foreground">hola@duopps.com</p>
                   </div>
                 </div>
 

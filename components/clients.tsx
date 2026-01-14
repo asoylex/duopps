@@ -4,14 +4,14 @@ import { useI18n } from "@/lib/i18n"
 import { motion } from "framer-motion"
 
 const clients = [
-  { name: "Stripe", industry: "Fintech" },
-  { name: "Shopify", industry: "E-commerce" },
-  { name: "Notion", industry: "Productivity" },
-  { name: "Figma", industry: "Design" },
-  { name: "Slack", industry: "Communication" },
-  { name: "Vercel", industry: "Technology" },
-  { name: "Linear", industry: "Project Management" },
-  { name: "Framer", industry: "Web Design" },
+  { name: "Servibandas", industry: "Industry" },
+  { name: "Modent", industry: "Dental Clinic" },
+  { name: "TSG", industry: "Mechanical Engineering" },
+  { name: "Global Speed Tuning", industry: "Car Tuning" },
+  { name: "Crew Ayala", industry: "Crew Racing Team" },
+  { name: "Creador de Historias", industry: "Photography" },
+  { name: "Green Life", industry: "Agriculture" },
+  { name: "Cumbres y Turismo", industry: "Travel Agency" },
 ]
 
 export function Clients() {

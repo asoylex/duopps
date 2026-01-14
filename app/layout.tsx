@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@/components/google-analytics"
 import { I18nProvider } from "@/lib/i18n"
 import "./globals.css"
 
@@ -37,7 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/DuoppsB02.svg" type="image/svg+xml" />
+      </head>
       <body className={`font-sans antialiased`}>
+        <GoogleAnalytics />
         <div className="noise-overlay" />
         <I18nProvider>{children}</I18nProvider>
         <Analytics />

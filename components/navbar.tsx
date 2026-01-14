@@ -7,6 +7,7 @@ import { Menu, X, Moon, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useI18n } from "@/lib/i18n"
 import { LanguageToggle } from "@/components/language-toggle"
+import Img from "next/image"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -49,9 +50,13 @@ export function Navbar() {
     >
       <nav className="container mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
         <Link href="/" className="text-xl md:text-2xl font-bold tracking-tight">
-          Duopps
+          <Img
+            src={isDark ? "/DuoppsW03.svg" : "/DuoppsB03.svg"}
+            alt="Duopps Logo"
+            width={150}
+            height={100}
+          />
         </Link>
-
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
