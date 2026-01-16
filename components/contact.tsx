@@ -227,7 +227,14 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <p className="text-sm text-muted-foreground">+502 5699 0867 / +502 5128 0108</p>
+                    <a 
+                      href="https://wa.me/50254088243?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios%20de%20desarrollo%20web%20y%20aplicaciones."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer underline-offset-4 hover:underline"
+                    >
+                      +502 5408 - 8243
+                    </a>
                   </div>
                 </div>
 
