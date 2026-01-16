@@ -6,7 +6,7 @@ import { useI18n } from "@/lib/i18n"
 
 const testimonials = [
 	{
-		name: "Dr. Ale Moscosofrol",
+		name: "Dr. Ale Moscoso",
 		role: { en: "Dental Clinic Owner", es: "Propietaria de Clínica Dental" },
 		company: "",
 		title: {

@@ -6,8 +6,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Globe, Languages } from "lucide-react"
 
 const languages: { code: Locale; label: string; flag: string }[] = [
-  { code: "en", label: "English", flag: "🇺🇸" },
   { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "en", label: "English", flag: "🇺🇸" },
 ]
 
 export function LanguageToggle() {
